@@ -6,18 +6,24 @@ var router = express.Router();
 
 let Food = require('../models/food');
 let FoodController = require('../controllers/food')
-/* Get route for the food list */
-// Read Operation
+/* Get operation route for the food list */
+
+// This is the read Operation
 router.get('/', FoodController.ShowFoodlist);
-/* Get route for Add food page --> Create */
+
+/* Get operation route for Add food page */
 router.get('/add', FoodController.AddFood); 
-/* Post route for Add food page --> Create */
+
+/* Post opertioan route for Add food page*/
 router.post('/add', FoodController.ProcessFood);
-/* Get route for displaying the Edit food page --> Update */
+
+/* Get operation route for displaying the Edit food page */
 router.get('/edit/:id', FoodController.EditFood);
-/* Post route for processing the Edit food page --> Update */
+
+/* Post operation route for processing the Edit food page */
 router.post('/edit/:id', FoodController.ProcessEditFood);
-/* Get to perform Delete Operation --> Delete Operation */
+
+/* Get operation to perform Delete action */
 router.get('/delete/:id', FoodController.DeleteFood);
 
  module.exports = router;

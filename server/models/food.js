@@ -1,3 +1,6 @@
+//This is the schema for the database
+// There are 4 fields
+
 let mongoose = require('mongoose');
 
 let foodModel = mongoose.Schema({
