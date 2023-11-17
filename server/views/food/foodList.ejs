@@ -1,0 +1,71 @@
+<!--Anish Mistry-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <!--Css files-->
+  <link rel='stylesheet' href='/Content/app.css' />
+  <link rel='stylesheet' href='/boostrap/dist/css/boostrap.min.css' />
+</head>
+
+<body>
+  <header>
+    <h6>Food List</h6>
+  </header>
+
+  <main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h1> <% title %> </h1>  
+            <a href="/foodlist/add" class="btn btn-primary" 
+            role="button"><i class="fas fa-plus-circle"></i> Add Food</a>      
+        <br>
+        <table class="table" >
+
+            <tr class="row">
+                <th class="text-center col-2">Food</th>
+                <th class="text-center col-2">Restaurant</th>
+                <th class="text-center col-1">Price</th>
+                <th class="text-center col-1">Calories</th>
+            </tr>
+            <% for(let count=0; count < FoodList.length; count++) { %>    
+            <tr class="row">
+                <td class="text-center col-2"><%= FoodList[count].Food %></td>
+                <td class="text-center col-2"><%= FoodList[count].Restaurant %></td>
+                <td class="text-center col-1"><%= FoodList[count].Price %></td>
+                <td class="text-center col-1"><%= FoodList[count].Calories %></td>
+                <td class="text-center col-1">
+                    
+                    <a href="/foodlist/edit/<%= FoodList[count]._id %>" 
+                        class="btn btn-primary btn-sm">
+                        <i class="fas fa-pencil-alt"></i> Edit Food
+                    </a>
+                </td>
+
+                <td class="text-center col-1">
+                    <a href="/foodlist/delete/<%= FoodList[count]._id %>" 
+                        class="btn btn-danger btn-sm">
+                        <i class="fas trash-alt"></i> Delete Food
+                    </a>
+                </td>
+            </tr>
+
+            <% } %>
+        </table>
+    </div>
+    </div>
+</main>
+
+<footer>
+    <h6>Created by Anish Mistry 2023. All Rights Reserved.</h6>
+</footer>
+<!--Script files-->
+<script src = "/Scripts/app.js"></script>
+<script src = "/bootstrap/dist/js/boostrap.min.js"></script>
+<script src = "/jquery/dist/jquery.min.js"></script>
+
+</body>
+</html>
